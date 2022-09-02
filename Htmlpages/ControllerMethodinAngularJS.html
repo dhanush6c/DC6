@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('personsCtrl', function ($scope) {
+            $scope.Name = "HarishP";
+            $scope.Address = "Address";
+            $scope.Email = "harishpesari09@gmail.com";
+            $scope.EMP_Info = function () {
+                return $scope.Name + " " + $scope.Email + " " + $scope.Address;
+            }
+        }
+        )
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="personsCtrl">
+        Name: <input type="text" ng-model="Name" />
+        <br />
+        <br />
+        Address: <input type="text" ng-model="Address" />
+        <br />
+        <br />
+        Email: <input type="text" ng-model="Email" />
+        <br />
+        <br />
+        <b>Empolyee Information : </b> {{EMP_Info()}}
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/employeeController.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="rptEmpolyeeCtrl">
+        <table style="border:1px solid" border="1">
+            <tr ng-repeat="x in rptEmpolyee">
+                <td ng-if="$odd" style="background-color: #1E90FF; width: 190px;">{{ x.Name }}</td>
+                <td ng-if="$even" style="background-color: #FF00FF; width: 190px;">{{ x.Name }}</td>
+                <td ng-if="$odd" style="background-color: #FF4500; width: 190px;">{{ x.City }}</td>
+                <td ng-if="$even" style="background-color: #9ACD32; width: 190px;">{{ x.City }}</td> >
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

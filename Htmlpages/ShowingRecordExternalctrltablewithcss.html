@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        table, th, td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+            table tr:nth-child(odd) {
+                background-color: orange;
+                color: yellow;
+                font-family: Verdana;
+            }
+
+            table tr:nth-child(even) {
+                background-color: blue;
+                color: white;
+                font-family: Arial;
+            }
+    </style>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/employeeController.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="rptEmpolyeeCtrl">
+        <table style="border:1px solid;" border="1">
+            <tr ng-repeat="x in rptEmpolyee">
+                <td style="width:200px">{{x.Name}}</td>
+                <td style="width:200px">{{x.City}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

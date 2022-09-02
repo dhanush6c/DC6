@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        app.controller('ShowHideButton', function ($scope) {
+            $scope.Name = "Harish P";
+            $scope.Address = "Hyderabad,Kakinada";
+            $scope.Myvar = true;
+            $scope.ShowHideButtonClick = function () {
+                $scope.Myvar = !$scope.Myvar;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="ShowHideButton">
+        <p ng-show="Myvar">
+            <b>Name:</b><input type="text" ng-model="Name" />
+            <br />
+            <br />
+            <b>Address:</b><input type="text" ng-model="Address" />
+        </p>
+        <p>
+            <button ng-click="ShowHideButtonClick()">Toggle</button>
+    </div>
+</body>
+</html>

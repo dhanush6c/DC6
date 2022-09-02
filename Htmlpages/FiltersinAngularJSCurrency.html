@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="Product=5; Cost = 20">
+        <p>
+            <b>Total Cost of Order :</b>{{Product * Cost | currency:"$"}}
+        </p>
+        <p>
+            <b>Total Cost of Order :</b>{{Product * Cost | currency:"E"}}
+        </p>
+        <p>
+            <b>Total Cost of Order :</b>{{Product * Cost | currency:"R"}}
+        </p>
+    </div>
+</body>
+</html>

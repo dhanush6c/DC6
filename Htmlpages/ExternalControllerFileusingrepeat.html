@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/employeeController.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="rptEmpolyeeCtrl">
+        <ul>
+            <li ng-repeat="X in rptEmpolyee">
+                {{X.Name+','+X.City}}
+            </li>
+        </ul>
+
+    </div>
+</body>
+</html>

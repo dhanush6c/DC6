@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/employeeController.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="rptEmpolyeeCtrl">
+    <p>
+        <b>Text Enter to Search </b><input type="text" ng-model="textToSearch" />
+        <ul>
+            <li ng-repeat="x in rptEmpolyee|filter:textToSearch|orderBy:'City'">
+                {{(x.Name|uppercase)+','+x.City}}
+            </li></ul>
+    </p>
+    </div></body>
+</html>

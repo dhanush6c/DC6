@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        app.controller('GetInfoCtrl', function ($scope) {
+            $scope.Name = "Harish P";
+            $scope.Address = "Hyderabad";
+            $scope.MyVar = false;
+            $scope.GetAllInfo = function () {
+                $scope.FullName = $scope.Name + " " + $scope.Address;
+            }
+        }
+        )
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="GetInfoCtrl">
+        <p>
+            Name:
+            <input type="text" ng-model="Name"><br />
+            <br />
+            Address:
+            <input type="text" ng-model="Address"><br />
+            <br>
+            <button ng-click="GetAllInfo()">Get Info</button>
+            <br />
+            <br />
+            Employee Information : {{FullName}}
+        </p>
+    </div>
+</body>
+</html>

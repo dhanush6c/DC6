@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script src="../Scripts/employeeController.js"></script>
+</head>
+<body style="background-color: skyblue; color: blue; font-family: Arial; fontsize: 12pt; font-weight: bold;">
+    <form ng-app="myApp" ng-controller="Registrationform" name="myForm" novalidate>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td></td>
+                <td>
+                    <input type="text" name="Name" ng-model="user.Name" required />
+                    <!--<span style="color:red;" ng-show="myForm.Name.$dirty && myForm.Name.$invalid">
+                        <span ng-show="myForm.Name.$error.required">Name is Required</span>
+                    </span>-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" name="Email" ng-model="user.Email" required />
+                    <!--<span style="color:red;" ng-show="myForm.Email.$dirty && myForm.Email.$invalid">
+                        <span ng-show="myForm.Email.$error.required">Email is required</span>
+                    </span>-->
+                </td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td></td>
+                <td>
+                    <input type="text" name="City" ng-model="user.City" required />
+                    <!--<span style="color: red;" ng-show="myForm.City.$dirty && myForm.City.$invalid">
+                        <span ng-show="myForm.City.$error.required">City is required.</span>
+                    </span>-->
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Country:
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" name="country" ng-model="user.country" required>
+                    <!--<span style="color: red;" ng-show="myForm.country.$dirty && myForm.country.$invalid">
+                        <span ng-show="myForm.country.$error.required">Country is required.</span>
+                    </span>-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mobile:
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" name="Mobile" ng-model="user.Mobile" required>
+                    <!--<span style="color: red;" ng-show="myForm.Mobile.$dirty && myForm.Mobile.$invalid">
+                        <span ng-show="myForm.Mobile.$error.required">Mobile is required.</span>
+                    </span>-->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td></td>
+                <td>
+                    <input type="text" name="Password" ng-model="user.Password" required />
+                    <!--<span style="color:red;" ng-show="myForm.Password.$dirty && myForm.Password.$invalid">
+                        <span ng-show="myForm.Password.$error.required">Password is required</span>
+                    </span>-->
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <button ng-click="Submit()"
+                            ng-disabled="myForm.Name.$dirty && myForm.Name.$invalid ||
+ myForm.Email.$dirty && myForm.Email.$invalid ||
+ myForm.Password.$dirty && myForm.Password.$invalid||myForm.City.$dirty && myForm.City.$invalid ||myForm.country.$dirty && myForm.country.$invalid ||
+                           myForm.Mobile.$dirty && myForm.Mobile.$invalid">
+                        Submit
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+        <table style="border:1px solid;" border="1">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>City</th>
+                <th>country</th>
+                <th>Password</th>
+                
+            </tr>
+            <tr ng-repeat="x in Response">
+                <td style="width:200px">{{x.Name}}</td>
+                <td style="width:200px">{{x.Email}}</td>
+                <td style="width:200px">{{x.Mobile}}</td>
+                <td style="width:200px">{{x.City}}</td>
+                <td style="width:200px">{{x.country}}</td>
+                <td style="width:200px">{{x.Password}}</td>
+            </tr>
+        </table>
+    </form>  
+</body>
+</html>

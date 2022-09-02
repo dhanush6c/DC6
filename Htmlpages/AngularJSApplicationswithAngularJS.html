@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller
+            ('myCtrl', function ($scope) {
+                $scope.Name =    "Harish P";
+                $scope.Email =   "harishpesari09@gmail.com";
+                $scope.Address = "Hyderabad";
+            }
+        );
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        Name:<input type="text" ng-model="Name" />
+        <br>
+        <br>
+        Email:<input type="text" ng-model="Email" />
+        <br>
+        <br>
+        Address:<input type="text" ng-model="Address" />
+        <br>
+        <br>
+        <b>Empolyee Information : </b>{{Name + ""+ Email + "" +Address + ""}}
+    </div>
+</body>
+</html>

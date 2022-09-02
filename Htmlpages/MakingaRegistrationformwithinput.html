@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/angular.js"></script>
+    <script>
+        var app = angular.module('myApp', [])
+        app.controller('Registrationform', function ($scope) {
+            $scope.master = {
+                Name: "Harish P", Email: "harishpesari09@gmail.com", Address: "Hyderabad", City: "Kakinada",
+                country: "Andra", Mobile: "9676609381", Password: "H@rish@123"
+            };
+            $scope.reset = function () {
+                $scope.user = angular.copy($scope.master);
+            };
+            $scope.reset();
+        });
+    </script>
+</head>
+<body style="background-color: skyblue; color: blue; font-family: Arial; fontsize: 12pt; font-weight: bold;">
+    <div ng-app="myApp" ng-controller="Registrationform">
+        <form novalidate>
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.Name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.Email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.Password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>City:</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.City" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>country:</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.country" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mobile:</td>
+                    <td></td>
+                    <td>
+                        <input type="text" ng-model="user.Mobile" />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button ng-click="reset()">RESET</button>                        
+                    </td>                                                         
+                </tr>
+            </table>
+        </form>
+        <p>Current form value={{user}}</p>
+        <p>Master value={{master}}</p>
+    </div>
+</body>
+</html>
