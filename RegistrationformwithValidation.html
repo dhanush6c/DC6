@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script src="registrationController.js"></script>
+
+            </head>
+            <body style="background-color:orange; color:black; font-family:Verdana; font-size:12px; font-weight:bold;">
+                <form ng-app="myApp" ng-controller="registrationForm" name="myForm" novalidate>
+                    <table>
+                        <tr>
+                            <td>NAME:</td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="Name" ng-model="user.Name" required />
+                                <span style="color:red;" ng-show="myForm.Name.$dirty && myForm.Name.$invalid">
+                                    <span ng-show="myForm.Name.$error.required">Name is required</span>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>EMAIL:</td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="Email" ng-model="user.Email" required />
+                                <span style="color:red;" ng-show="myForm.Email.$dirty && myForm.Email.$invalid">
+                                    <span ng-show="myForm.Email.$error.required">Mail ID is required</span>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Address</td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="Address" ng-model="user.Address" required />
+                                <span style="color:red;" ng-show="myForm.Address.$dirty && myForm.Address.$invalid">
+                                    <span ng-show="myForm.Address.$error.required">Address is required</span>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>MOBILE:</td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="Mobile" ng-model="user.Mobile" required />
+                                <span style="color:red;" ng-show="myForm.Mobile.$dirty && myForm.Mobile.$invalid">
+                                    <span ng-show="myForm.Mobile.$error.required">Mobile Number required</span>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>PINCODE:</td>
+                            <td></td>
+                            <td>
+                                <input type="text" name="Pincode" ng-model="user.Pincode" required />
+                                <span style="color:red;" ng-show="myForm.Pincode.$dirty && myForm.Pincode.$invalid">
+                                    <span ng-show="myForm.Pincode.$error.required">Pincode is required</span>
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <button ng-click="Submit()"
+                                        ng-disabled="myForm.Name.$dirty && myForm.Name.$invalid ||
+                                                     myForm.Email.$dirty && myForm.Email.$invalid ||
+                                                     myForm.Address.$dirty && myForm.Address.$invalid||
+                                                     myForm.Mobile.$dirty && myForm.Mobile.$invalid ||
+                                                     myForm.Pincode.$dirty && myForm.Pincode.$invalid">
+                                    Submit
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table style="border:1px solid;" border="1">
+                        <tr>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>ADDRESS</th>
+                            <th>MOBILE</th>
+                            <th>PINCODE</th>
+                        </tr>
+                        <tr ng-repeat="x in Response">
+                            <td style="width:200px;">{{X.Name}}</td>
+                            <td style="width:200px;">{{X.Email}}</td>
+                            <td style="width:200px;">{{X.Address}}</td>
+                            <td style=" width:200px;">{{X.Mobile}}</td>
+                            <td style="width:2000px;">{{X.Pincode}}</td>
+                        </tr>
+                    </table>
+                </form>
+</body>
+</html>
